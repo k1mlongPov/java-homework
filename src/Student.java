@@ -1,5 +1,5 @@
 public class Student {
-    private int id;
+    int id;
     String name;
     String gender;
     String course;

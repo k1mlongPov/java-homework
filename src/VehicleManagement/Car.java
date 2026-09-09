@@ -1,12 +1,15 @@
 package VehicleManagement;
 
 public class Car extends Vehicle {
+
     private int numberOfDoors;
     private String fuelType;
     private String transmission;
 
-    public Car(String brand, String model, int year, String color, double price,
-               int numberOfDoors, String fuelType, String transmission) {
+    public Car(String brand, String model, int year,
+               String color, double price,
+               int numberOfDoors, String fuelType,
+               String transmission) {
 
         super(brand, model, year, color, price);
 
@@ -15,21 +18,20 @@ public class Car extends Vehicle {
         this.transmission = transmission;
     }
 
-    public int getNumberOfDoors() {
-        return numberOfDoors;
+    @Override
+    public String getVehicleType() {
+        return "Car";
     }
 
-    public String getFuelType() {
-        return fuelType;
-    }
-
-    public String getTransmission() {
-        return transmission;
+    @Override
+    public String getDescription() {
+        return "A " + fuelType + " " + transmission +
+                " car with " + numberOfDoors + " doors.";
     }
 
     @Override
     public String toString() {
-        return "Car {" +
+        return getVehicleType() + " {" +
                 super.toString() +
                 ", Doors: " + numberOfDoors +
                 ", Fuel: " + fuelType +

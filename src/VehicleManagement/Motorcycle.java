@@ -1,12 +1,15 @@
 package VehicleManagement;
 
 public class Motorcycle extends Vehicle {
+
     private int engineCC;
     private boolean hasSidecar;
     private String type;
 
-    public Motorcycle(String brand, String model, int year, String color, double price,
-                      int engineCC, boolean hasSidecar, String type) {
+    public Motorcycle(String brand, String model, int year,
+                      String color, double price,
+                      int engineCC, boolean hasSidecar,
+                      String type) {
 
         super(brand, model, year, color, price);
 
@@ -15,21 +18,20 @@ public class Motorcycle extends Vehicle {
         this.type = type;
     }
 
-    public int getEngineCC() {
-        return engineCC;
+    @Override
+    public String getVehicleType() {
+        return "Motorcycle";
     }
 
-    public boolean isHasSidecar() {
-        return hasSidecar;
-    }
-
-    public String getType() {
-        return type;
+    @Override
+    public String getDescription() {
+        return type + " motorcycle with a " +
+                engineCC + "cc engine.";
     }
 
     @Override
     public String toString() {
-        return "Motorcycle {" +
+        return getVehicleType() + " {" +
                 super.toString() +
                 ", Engine: " + engineCC + "cc" +
                 ", Sidecar: " + hasSidecar +

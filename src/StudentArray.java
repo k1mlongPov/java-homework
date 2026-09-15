@@ -170,8 +170,7 @@ void main() {
                 boolean found = false;
                 i = 0;
                 while (i < size) {
-                    if (students[i] != null &&
-                            students[i].id == deleteId) {
+                    if (students[i] != null && students[i].id == deleteId) {
                         int j = i;
                         while (j < size - 1) {
                             students[j] = students[j + 1];
